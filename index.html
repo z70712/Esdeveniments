@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esdeveniments 1</title> <!--Títol-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function Amaga() { //Funció que amaga les imatges
+                document.getElementById("ahorcado_0").hidden = true;
+                document.getElementById("ahorcado_1").hidden = true;
+                document.getElementById("ahorcado_2").hidden = true;
+                document.getElementById("ahorcado_3").hidden = true;
+                document.getElementById("ahorcado_4").hidden = true;
+                document.getElementById("ahorcado_5").hidden = true;
+                document.getElementById("ahorcado_6").hidden = false;
+            }
+            function Canvia(vides) { //Funció que canvia ordenadament les imatges
+                vides_1 = vides - 1;
+                if(vides_1 == -1) { vides_1 = "6";}
+                document.getElementById("ahorcado_" + vides).hidden = true;
+                document.getElementById("ahorcado_" + vides_1).hidden = false;
+            }
+        </script>
+    </head>
+    <body onload="Amaga();">
+        <script>
+            window.onkeypress = function(evobject) { //Funció clicar tecla intro
+                if (evobject.keyCode == 13) {
+                    alert("Has clickat INTRO");
+                }
+            }
+        </script>
+        <h1 onmouseover="this.style.color = 'red'" onmouseout="this.style.color = 'black'">Joc del Penjat</h1> <!--Canvi de imatge quan es clica-->
+            <img src="img/ahorcado_0.png" id="ahorcado_0" style="width:280px;height:270px;"
+                onclick="Canvia('0');"/>
+            <img src="img/ahorcado_1.png" id="ahorcado_1" style="width:280px;height:270px;"
+                onclick="Canvia('1');"/>
+            <img src="img/ahorcado_2.png" id="ahorcado_2" style="width:280px;height:270px;"
+                onclick="Canvia('2');"/>
+            <img src="img/ahorcado_3.png" id="ahorcado_3" style="width:280px;height:270px;"
+                onclick="Canvia('3');"/>
+            <img src="img/ahorcado_4.png" id="ahorcado_4" style="width:280px;height:270px;"
+                onclick="Canvia('4');"/>
+            <img src="img/ahorcado_5.png" id="ahorcado_5" style="width:280px;height:270px;"
+                onclick="Canvia('5');"/>
+            <img src="img/ahorcado_6.png" id="ahorcado_6" style="width:280px;height:270px;"
+                onclick="Canvia('6');"/>
+        <h3>Prova a clickar l'imatge, a passar per sobre el títol i a polsar la tecla intro!</h3>
+    </body>
+</html>
